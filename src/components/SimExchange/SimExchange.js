@@ -27,11 +27,16 @@ class SimExchange extends Component {
   render() {
     const { asks, bids, contract, contracts, location } = this.props;
 
-    return (
-      <div className="text-center" style={{ fontSize: '18px', padding: '4em' }}>
-        <strong>Coming soon...</strong>
-      </div>
-    );
+    if (!this.props.shouldRender) {
+      return (
+        <div
+          className="text-center"
+          style={{ fontSize: '18px', padding: '4em' }}
+        >
+          <strong>Coming soon...</strong>
+        </div>
+      );
+    }
 
     return (
       <Layout>
