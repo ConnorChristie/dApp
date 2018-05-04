@@ -53,7 +53,7 @@ export const calculateCollateral = function(
 };
 
 // TODO: move me to wherever I belong -clean up, add documentation, figure out how best to create order object in JS
-export const getBids = function(web3, marketContract, orderLib) {
+export async function getBids(web3, marketContract, orderLib) {
   // for now we will create orders around the contract mid price, eventually we should create orders
   // that are around an price pulled from an active API that mimics the oracle solution
   const contractMidPrice =
@@ -68,14 +68,14 @@ export const getBids = function(web3, marketContract, orderLib) {
     web3,
     marketContract,
     orderLib,
-    web3.eth.accounts[9],
+    web3.eth.accounts[0],
     contractMidPrice - BUY_SIGN, // subtract our sign so our market are not crossed.
     SELL_SIGN,
     5
   );
-};
+}
 
-export const getAsks = function(web3, marketContract, orderLib) {
+export async function getAsks(web3, marketContract, orderLib) {
   // for now we will create orders around the contract mid price, eventually we should create orders
   // that are around an price pulled from an active API that mimics the oracle solution
   const contractMidPrice =
@@ -90,12 +90,12 @@ export const getAsks = function(web3, marketContract, orderLib) {
     web3,
     marketContract,
     orderLib,
-    web3.eth.accounts[9],
+    web3.eth.accounts[0],
     contractMidPrice - BUY_SIGN, // subtract our sign so our market are not crossed.
     SELL_SIGN,
     5
   );
-};
+}
 
 const createNewOrders = async function(
   web3,

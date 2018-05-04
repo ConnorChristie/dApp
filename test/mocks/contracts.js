@@ -68,3 +68,4 @@ export const MarketCollateralPool = createMockContract('MarketCollateralPool');
 export const MarketToken = createMockContract('MarketToken');
 export const CollateralToken = createMockContract('CollateralToken');
 export const QueryTest = createMockContract('QueryTest');
+export const OrderLib = createMockContract('OrderLib');
