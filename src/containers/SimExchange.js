@@ -4,7 +4,7 @@ import store from '../store';
 import Contracts from '../Contracts.js';
 
 import SimExchangeComponent from '../components/SimExchange/SimExchange';
-import { loadContracts } from '../actions/explorer';
+// import { loadContracts } from '../actions/explorer';
 import CreateInitializer, {
   contractConstructor
 } from '../util/web3/contractInitializer';

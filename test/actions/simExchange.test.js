@@ -52,7 +52,7 @@ describe('SimExchange Actions', () => {
         expect(dispatchSpy).to.have.property('callCount', 2);
         expect(dispatchSpy.args[0][0].type).to.equals('GET_BIDS_PENDING');
         expect(dispatchSpy.args[1][0].type).to.equals('GET_BIDS_FULFILLED');
-        expect(dispatchSpy.args[1][0].payload).to.be(expectedResult);
+        expect(dispatchSpy.args[1][0].payload).to.deep.equal(expectedResult);
       }).catch(fail);
     });
 
@@ -81,7 +81,7 @@ describe('SimExchange Actions', () => {
         expect(dispatchSpy).to.have.property('callCount', 2);
         expect(dispatchSpy.args[0][0].type).to.equals('GET_ASKS_PENDING');
         expect(dispatchSpy.args[1][0].type).to.equals('GET_ASKS_FULFILLED');
-        expect(dispatchSpy.args[1][0].payload).to.be(expectedResult);
+        expect(dispatchSpy.args[1][0].payload).to.deep.equal(expectedResult);
       }).catch(fail);
     });
 

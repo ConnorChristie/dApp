@@ -1,4 +1,4 @@
-import store from '../store';
+// import store from '../store';
 
 export function selectContract({ contract }) {
   return function(dispatch) {
@@ -16,8 +16,8 @@ export function getContractBids(
     dispatch({ type: `${type}_PENDING` });
 
     if (web3 && typeof web3 !== 'undefined') {
-      const orderLibInstance = await OrderLib.deployed();
-      const marketContractInstance = await MarketContract.deployed();
+      // const orderLibInstance = await OrderLib.deployed();
+      // const marketContractInstance = await MarketContract.deployed();
 
       const activeBids = await getBids();
 
